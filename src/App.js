@@ -1,57 +1,46 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
 import './App.css';
+import ContextProvider from './Components/Context/ContextProvider';
+import AddFood from './Components/DeshBoard/AddFood';
+import AddStudent from './Components/DeshBoard/AddStudent';
+import DeshBoard from './Components/DeshBoard/DeshBoard';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import PrivateRoute from './Components/Private/PrivateRoute';
+import AdminRoute from "./Components/Private/AdminRoute"
+import Student from './Components/DeshBoard/Student';
+import Serve from './Components/DeshBoard/Serve';
+import Food from './Components/DeshBoard/Food';
+import MakeAdmin from './Components/DeshBoard/MakeAdmin';
+import Welcome from './Components/DeshBoard/Welcome';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <ContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          
+          <Route path="deshboard" element={<PrivateRoute><DeshBoard></DeshBoard></PrivateRoute>}>
+          <Route path="/deshboard/welcome" element={<Welcome />} />
+            <Route element={<AdminRoute><AddStudent /></AdminRoute>} path="/deshboard/addStudent" />
+            <Route element={<AdminRoute><Student /></AdminRoute>} path="/deshboard/Student" />
+            <Route element={<AdminRoute><Food /></AdminRoute>} path="/deshboard/Food" />
+            <Route element={<AdminRoute><AddFood /></AdminRoute>} path="/deshboard/AddFood" />
+            <Route element={<AdminRoute><Serve /></AdminRoute>} path="/deshboard/Serve" />
+            <Route element={<AdminRoute><MakeAdmin /></AdminRoute>} path="/deshboard/admin" />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
 

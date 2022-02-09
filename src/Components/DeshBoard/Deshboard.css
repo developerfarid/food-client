@@ -1,0 +1,185 @@
+.deshboard-menu {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.deshboard-menu ul li,
+.deshboard-menu li {
+  position: relative;
+
+  list-style: none;
+}
+.deshboard-menu .head {
+  margin-bottom: 20px;
+  margin-top: 38px;
+  color: white;
+  font-size: 45px;
+  margin-left: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.toggle {
+  margin-right: 3rem;
+  display: none;
+}
+.deshboard-menu ul li:hover {
+  background-color: #ffff;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+.deshboard-menu ul li .a {
+  position: relative;
+  display: block;
+  display: flex;
+  text-decoration: none;
+  color: #ffff;
+  font-weight: 600;
+}
+.deshboard-menu ul li:hover .a {
+  color: rgb(0, 0, 0);
+}
+.deshboard-menu ul li .a:first-child {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.deshboard-menu ul li .a:last-child {
+  position: relative;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+}
+.deshboard-menu ul li .a:last-child span {
+  padding-right: 15px;
+}
+.desboard-heading {
+  height: 60px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.desboard-heading button {
+  background-color: rgb(255, 0, 221) !important;
+  color: rgb(255, 255, 255);
+  margin-right: 15px;
+  font-weight: 600;
+  transition: all 0.3s linear;
+}
+.desboard-heading button:hover {
+  color: rgb(0, 0, 0);
+}
+.desboard-heading input {
+  padding: 8px;
+  margin-left: 10px;
+  display: inline-block;
+  border: none;
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pricing-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.pricing-box {
+  background-color: transparent;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  flex: 1;
+  padding: 0 30px 30px;
+  margin: 2%;
+  width: 90%;
+}
+
+.pricing-box h5 {
+  text-transform: uppercase;
+}
+
+.features-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.features-list li {
+  font-weight: 100;
+  padding: 12px 0;
+  font-weight: 100;
+}
+
+.features-list li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-box-bg-image {
+  background-image: url("https://images.unsplash.com/photo-1550029402-226115b7c579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80");
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
+
+.pricing-box-bg-image .features-list li {
+  border-bottom-color: rgba(255, 255, 255, 1);
+}
+
+.navbar > .container-fluid,
+.navbar > .container-lg,
+.navbar > .container-md,
+.navbar > .container-sm,
+.navbar > .container-xl,
+.navbar > .container-xxl {
+  display: block;
+}
+.lo {
+  display: none;
+  background-color: black;
+}
+@media only screen and (max-width: 768px) {
+  .deshboard-menu {
+    height: 100vh;
+    display: block;
+    width: 100%;
+    background-color: black;
+
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .waraper {
+    position: relative;
+    display: block;
+
+    width: 100%;
+  }
+  .background {
+    display: none;
+  }
+  .lo {
+    display: block;
+  }
+  .search {
+    display: none !important;
+  }
+  .logo {
+    font-size: 40px !important;
+  }
+  .get-in-touch .title {
+    font-size: 2em;
+  }
+}
